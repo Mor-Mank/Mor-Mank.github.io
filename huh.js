@@ -1,38 +1,45 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBWQxsIuOSSgL357neWHQc242TicBw5d3E",
-    authDomain: "saintnicholasepproj.firebaseapp.com",
-    databaseURL: "https://saintnicholasepproj-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "saintnicholasepproj",
-    storageBucket: "saintnicholasepproj.appspot.com",
-    messagingSenderId: "947953743836",
-    appId: "1:947953743836:web:3284eb88b9abeb442fc119",
-    measurementId: "G-YF6FLSH3LC"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-var saintnicholasepprojDB = firebase.database().ref('saintnicholasepproj')
-
-document.getElementById('saveForm').addEventListener('submit', sumbitForm);
-
-function sumbitForm(e) {
-  e.preventDefault();
-
-  var name = document.getElementById("name").value;
-  var Chicken = document.getElementById("Chicken").value;
-  var phone = document.getElementById("phone").value;
+  apiKey: "AIzaSyA2ZO01gISs2RcGhVn-Rc7JEtNFMkbSMXc",
+  authDomain: "saintnicholasepprojn.firebaseapp.com",
+  databaseURL: "https://saintnicholasepprojn-default-rtdb.firebaseio.com",
+  projectId: "saintnicholasepprojn",
+  storageBucket: "saintnicholasepprojn.appspot.com",
+  messagingSenderId: "171886577856",
+  appId: "1:171886577856:web:34539f622fa29defc88525",
+  measurementId: "G-GBB763DT0V"
 }
 
-const saveMessages = (name,Chicken,phone) => {
-  var newContactForm = saintnicholasepprojDB.push();
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
+
+// reference your database
+var contactFormDB = firebase.database().ref("contactForm");
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+  var Fud = getElementVal("Fud");
+  var phone = getElementVal("phone");
+
+  saveMessages(name, Fud, phone);
+
+  //   reset the form
+  document.getElementById("contactForm").reset();
+}
+
+const saveMessages = (name, Fud, phone) => {
+  var newContactForm = contactFormDB.push();
 
   newContactForm.set({
     name: name,
-    Food: Chicken,
+    Fud: Fud,
     phone: phone,
   });
 };
 
-const getElementById = (id) => {
+const getElementVal = (id) => {
   return document.getElementById(id).value;
 };
