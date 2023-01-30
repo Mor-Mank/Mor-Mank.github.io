@@ -23,7 +23,7 @@
           for (var i = 0; i < data.length; i++) {
             var userData = document.createElement("p");
             userData.innerHTML = "ออเดอร์ " + (i+1) + ": ชื่อ: " + data[i].name + " เมนูที่: " + data[i].Chicken + " เบอร์โทร: " + data[i].phone;
-            document.getElementById("user-data").appendChild(userData);
+            document.getElementById("user-data")
           }
         }
     
