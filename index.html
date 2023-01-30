@@ -237,32 +237,11 @@
 </section> 
 
 
-<script>
-
-    function saveForm() {
-    var name = window.document.getElementById("name").value;
-    var Chicken = window.document.getElementById("Chicken").value;
-    var phone = window.document.getElementById("phone").value;
-    
-    var data = window.localStorage.getItem("data");
-    if (data == null) {
-      data = [];
-    } else {
-      data = JSON.parse(data);
-    }
-
-    data.push({name: name, Chicken: Chicken, phone: phone});
-    
-    window.localStorage.setItem("data", JSON.stringify(data));
-
-    window.location.href = "display.html";
-    }
-    
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script src="script.js"></script>
+
+<script src="wot.js"></script>
 
 
     
