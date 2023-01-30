@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<section class="header">
+    
+    <a href="index2.html" class="logo"><i class="fa-solid fa-mug-hot"></i></i> Order</a>
+
+</section>
+
+<style>
+    p{ font-size: 30px;}
+</style>
+
+<h2>User data</h2>
+<p id="user-data"></p>
+
+<script>
+    
+    var data = localStorage.getItem("data");
+    if (data != null) {
+      data = JSON.parse(data);
+      for (var i = 0; i < data.length; i++) {
+        var userData = document.createElement("p");
+        userData.innerHTML = "ออเดอร์ " + (i+1) + ": ชื่อ: " + data[i].name + " เมนูที่: " 
+        + data[i].Chicken + " เบอร์โทร: " 
+        + data[i].phone;
+        document.getElementById("user-data").appendChild(userData);
+      }
+    }
+
+</script>
+
+</body>
+</html>
