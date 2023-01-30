@@ -11,18 +11,28 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-firebase.database().ref('saintnicholasepproj')
+var saintnicholasepprojDB = firebase.database().ref('saintnicholasepproj')
 
-function saveForm() {
+document.getElementById('saveForm').addEventListener('submit', sumbitForm);
+
+function sumbitForm(e) {
+  e.preventDefault();
+
   var name = document.getElementById("name").value;
-  var chicken = document.getElementById("chicken").value;
+  var Chicken = document.getElementById("Chicken").value;
   var phone = document.getElementById("phone").value;
-
-  database.ref().push({
-    name: name,
-    chicken: chicken,
-    phone: phone
-  });
-
-  window.location.href = "index2.html";
 }
+
+const saveMessages = (name,Chicken,phone) => {
+  var newContactForm = saintnicholasepprojDB.push();
+
+  newContactForm.set({
+    name: name,
+    Food: Chicken,
+    phone: phone,
+  });
+};
+
+const getElementById = (id) => {
+  return document.getElementById(id).value;
+};

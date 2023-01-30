@@ -29,39 +29,7 @@
 <h2>User data</h2>
 <p id="user-data"></p>
 
-<script>
-     const firebaseConfig = {
-    apiKey: "AIzaSyBWQxsIuOSSgL357neWHQc242TicBw5d3E",
-    authDomain: "saintnicholasepproj.firebaseapp.com",
-    databaseURL: "https://saintnicholasepproj-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "saintnicholasepproj",
-    storageBucket: "saintnicholasepproj.appspot.com",
-    messagingSenderId: "947953743836",
-    appId: "1:947953743836:web:3284eb88b9abeb442fc119",
-    measurementId: "G-YF6FLSH3LC"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-firebase.database().ref('saintnicholasepproj')
-
-var data = localStorage.getItem("data");
-        if (data != null) {
-          data = JSON.parse(data);
-          for (var i = 0; i < data.length; i++) {
-            var userData = document.createElement("p");
-            userData.innerHTML = "ออเดอร์ " + (i+1) + ": ชื่อ: " + data[i].name + " เมนูที่: " + data[i].Chicken + " เบอร์โทร: " + data[i].phone;
-            document.getElementById("user-data").appendChild(userData);
-          }
-        }
-    
-</script>
-
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="wot.js"></script>
 
 </body>
 </html>
