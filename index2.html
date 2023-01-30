@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
 
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
 
@@ -31,15 +31,15 @@
 
 <script>
     
-    var data = localStorage.getItem("data");
+    var data = window.localStorage.getItem("data");
     if (data != null) {
       data = JSON.parse(data);
       for (var i = 0; i < data.length; i++) {
-        var userData = document.createElement("p");
+        var userData = window.document.createElement("p");
         userData.innerHTML = "ออเดอร์ " + (i+1) + ": ชื่อ: " + data[i].name + " เมนูที่: " 
         + data[i].Chicken + " เบอร์โทร: " 
         + data[i].phone;
-        document.getElementById("user-data").appendChild(userData);
+        window.document.getElementById("user-data").appendChild(userData);
       }
     }
 
